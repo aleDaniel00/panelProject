@@ -5,18 +5,21 @@ header('Content-Type: application/json; charset=utf-8');
 // Nos conectamos a la base
 require 'conexion.php';
 $id = mysqli_real_escape_string($db, $_GET['id']);
-$query = "SELECT
-                DATE_FORMAT(dias.FECHA, '%d/%m/%Y') AS fecha,
-                ac_estimadas.CANTIDAD AS actE,
-                ac_finalizadas.CANTIDAD AS actF,
-                proyectos_has_dias.proyectos_ID_PROYECTO AS proyecto,
-                proyectos_has_dias.dias_ID_DIA 
-            FROM
-                 ac_estimadas
-            JOIN ac_finalizadas ON ac_estimadas.dias_ID_DIA = ac_finalizadas.dias_ID_DIA
-            JOIN dias ON dias.ID_DIA = ac_estimadas.dias_ID_DIA
-            JOIN proyectos_has_dias ON proyectos_has_dias.dias_ID_DIA = proyectos_has_dias.proyectos_ID_PROYECTO
-            WHERE proyectos_has_dias.proyectos_ID_PROYECTO = '$id'";
+$query = "SELECT 
+                 DATE_FORMAT(dias.FECHA, '%d/%m/%Y') as fecha,
+                ac_estimadas.CANTIDAD as actE,
+                ac_finalizadas.CANTIDAD as actF
+            from dias
+            join proyectos_has_dias on dias.ID_DIA = proyectos_has_dias.dias_ID_DIA
+
+            JOIN ac_estimadas on ac_estimadas.dias_ID_DIA = dias.ID_DIA 
+            join proyectos on proyectos.ID_PROYECTO = ac_estimadas.proyectos_ID_PROYECTO
+
+            JOIN ac_finalizadas on ac_finalizadas.dias_ID_DIA = dias.ID_DIA 
+            AND  proyectos.ID_PROYECTO = ac_finalizadas.proyectos_ID_PROYECTO
+
+            WHERE proyectos.ID_PROYECTO= '$id'
+            GROUP BY FECHA";
 
 $res = mysqli_query($db, $query);
 

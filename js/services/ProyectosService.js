@@ -13,7 +13,6 @@ angular.module('examenApp')
                 return $http.put('API/GestionProyecto/modificarProject.php?id=' + id, data);
             };
             this.grabar = function(proyecto) {
-                alert();
                 return $http.post('API/GestionProyecto/grabarProject.php', proyecto);
             };
         }

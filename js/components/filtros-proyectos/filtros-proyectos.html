@@ -5,12 +5,12 @@
     <hr>
     <div uib-collapse="isCollapsed" class="col-md-5">
         <div class="btn-group-vertical" role="group" aria-label="...">
-            <div ng-repeat="(indice,valor) in $ctrl.indices" class="btn-group" uib-dropdown>
-                <button id="{{  valor }} " type="button " class="btn btn-primary " uib-dropdown-toggle>
-             El indice : {{ indice }} y el valor : {{valor}}{<span class="caret "></span>
-            </button>
-                <ul class="dropdown-menu " uib-dropdown-menu role="menu " aria-labelledby="{{ indice }} ">
-                    <atributospor-indice indice="indice"></atributospor-indice>
+            <div ng-repeat="indice in $ctrl.indices" class="btn-group" uib-dropdown>
+                <button id="{{  indice.atributo }} " type="button " class="btn btn-primary " ng-model="indice" ng-click="verIndice(indice)" uib-dropdown-toggle>
+                 El indice : {{ indice.atributo }} - {{ $ctrl.index }} <span class="caret "></span>
+                </button>
+                <ul class="dropdown-menu " uib-dropdown-menu role="menu " aria-labelledby="{{ indice.atributo }} ">
+                    <atributospor-indice index="index"></atributospor-indice>
                 </ul>
             </div>
 

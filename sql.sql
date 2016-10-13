@@ -74,9 +74,9 @@ INSERT INTO `dias` VALUES (7,NOW());
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `examen`.`ac_estimadas` (
   `ID_AC_ESTIMADA` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `CANTIDAD` SMALLINT NOT NULL COMMENT '',
-  `dias_ID_DIA` INT NOT NULL COMMENT '',
-  `proyectos_ID_PROYECTO` INT NOT NULL COMMENT '',
+  `CANTIDAD` SMALLINT  NULL COMMENT '',
+  `dias_ID_DIA` INT NULL COMMENT '',
+  `proyectos_ID_PROYECTO` INT NULL COMMENT '',
   PRIMARY KEY (`ID_AC_ESTIMADA`)  COMMENT '',
   INDEX `fk_ac_estimadas_dias1_idx` (`dias_ID_DIA` ASC)  COMMENT '',
   INDEX `fk_ac_estimadas_proyectos1_idx` (`proyectos_ID_PROYECTO` ASC)  COMMENT '',
@@ -93,21 +93,40 @@ CREATE TABLE IF NOT EXISTS `examen`.`ac_estimadas` (
 ENGINE = InnoDB;
 
 INSERT INTO `ac_estimadas` VALUES (1,3,1,1);
-INSERT INTO `ac_estimadas` VALUES (2,3,2,2);
-INSERT INTO `ac_estimadas` VALUES (3,3,3,1);
-INSERT INTO `ac_estimadas` VALUES (4,3,4,3);
-INSERT INTO `ac_estimadas` VALUES (5,3,5,2);
-INSERT INTO `ac_estimadas` VALUES (6,3,6,1);
-INSERT INTO `ac_estimadas` VALUES (7,3,7,3);
+INSERT INTO `ac_estimadas` VALUES (2,4,2,1);
+INSERT INTO `ac_estimadas` VALUES (3,10,3,1);
+INSERT INTO `ac_estimadas` VALUES (4,6,4,1);
+INSERT INTO `ac_estimadas` VALUES (5,2,5,1);
+INSERT INTO `ac_estimadas` VALUES (6,6,6,1);
+INSERT INTO `ac_estimadas` VALUES (7,6,7,1);
+
+INSERT INTO `ac_estimadas` VALUES (8,15,1,2);
+INSERT INTO `ac_estimadas` VALUES (9,3,2,2);
+INSERT INTO `ac_estimadas` VALUES (10,15,3,2);
+INSERT INTO `ac_estimadas` VALUES (11,10,4,2);
+INSERT INTO `ac_estimadas` VALUES (12,8,5,2);
+INSERT INTO `ac_estimadas` VALUES (13,8,6,2);
+INSERT INTO `ac_estimadas` VALUES (14,8,7,2);
+
+
+INSERT INTO `ac_estimadas` VALUES (15,0,4,3);
+INSERT INTO `ac_estimadas` VALUES (16,3,3,3);
+INSERT INTO `ac_estimadas` VALUES (17,20,5,3);
+INSERT INTO `ac_estimadas` VALUES (18,6,6,3);
+INSERT INTO `ac_estimadas` VALUES (19,4,7,3);
+INSERT INTO `ac_estimadas` VALUES (20,2,1,3);
+INSERT INTO `ac_estimadas` VALUES (21,3,2,3);
+
+
 
 -- -----------------------------------------------------
 -- Table `examen`.`ac_finalizadas`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `examen`.`ac_finalizadas` (
   `ID_AC_FINALIZADA` INT NOT NULL AUTO_INCREMENT COMMENT '',
-  `CANTIDAD` SMALLINT NOT NULL COMMENT '',
-  `dias_ID_DIA` INT NOT NULL COMMENT '',
-  `proyectos_ID_PROYECTO` INT NOT NULL COMMENT '',
+  `CANTIDAD` SMALLINT  NULL COMMENT '',
+  `dias_ID_DIA` INT  NULL COMMENT '',
+  `proyectos_ID_PROYECTO` INT NULL COMMENT '',
   PRIMARY KEY (`ID_AC_FINALIZADA`)  COMMENT '',
   INDEX `fk_ac_estimadas_dias1_idx` (`dias_ID_DIA` ASC)  COMMENT '',
   INDEX `fk_ac_finalizadas_proyectos1_idx` (`proyectos_ID_PROYECTO` ASC)  COMMENT '',
@@ -125,13 +144,30 @@ ENGINE = InnoDB;
 
 
 
+
 INSERT INTO `ac_finalizadas` VALUES (1,2,1,1);
-INSERT INTO `ac_finalizadas` VALUES (2,1,2,1);
-INSERT INTO `ac_finalizadas` VALUES (3,1,3,2);
-INSERT INTO `ac_finalizadas` VALUES (4,2,4,2);
-INSERT INTO `ac_finalizadas` VALUES (5,2,5,3);
-INSERT INTO `ac_finalizadas` VALUES (6,3,6,3);
-INSERT INTO `ac_finalizadas` VALUES (7,3,7,3);
+INSERT INTO `ac_finalizadas` VALUES (2,3,2,1);
+INSERT INTO `ac_finalizadas` VALUES (3,8,3,1);
+INSERT INTO `ac_finalizadas` VALUES (4,6,4,1);
+INSERT INTO `ac_finalizadas` VALUES (5,4,5,1);
+INSERT INTO `ac_finalizadas` VALUES (6,2,6,1);
+INSERT INTO `ac_finalizadas` VALUES (7,1,7,1);
+
+INSERT INTO `ac_finalizadas` VALUES (8,2,1,2);
+INSERT INTO `ac_finalizadas` VALUES (9,2,2,2);
+INSERT INTO `ac_finalizadas` VALUES (10,0,3,2);
+INSERT INTO `ac_finalizadas` VALUES (11,0,4,2);
+INSERT INTO `ac_finalizadas` VALUES (12,6,5,2);
+INSERT INTO `ac_finalizadas` VALUES (13,4,6,2);
+INSERT INTO `ac_finalizadas` VALUES (14,4,7,2);
+
+INSERT INTO `ac_finalizadas` VALUES (15,0,1,3);
+INSERT INTO `ac_finalizadas` VALUES (16,2,2,3);
+INSERT INTO `ac_finalizadas` VALUES (17,15,3,3);
+INSERT INTO `ac_finalizadas` VALUES (18,5,4,3);
+INSERT INTO `ac_finalizadas` VALUES (19,3,5,3);
+INSERT INTO `ac_finalizadas` VALUES (20,1,6,3);
+INSERT INTO `ac_finalizadas` VALUES (21,7,7,3);
 
 
 

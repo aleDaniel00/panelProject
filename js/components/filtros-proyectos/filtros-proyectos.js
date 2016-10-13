@@ -1,12 +1,25 @@
 function MainCtrl($scope, $log) {
 
-    this.indices = [
-        'NOMBRE',
-        'DESCRIPCION',
-        'RFI',
-        'NOTAS',
-        'ESTADO'
+    this.indices = [{
+            atributo: 'NOMBRE'
+        },
+        {
+            atributo: 'DESCRIPCION'
+        },
+        {
+            atributo: 'RFI'
+        },
+        {
+            atributo: 'NOTAS'
+        },
+        {
+            atributo: 'ESTADO'
+        }
     ];
+    $scope.verIndice = function(indice) {
+        alert(indice.atributo);
+        this.index = indice.atributo;
+    }
 
 
 

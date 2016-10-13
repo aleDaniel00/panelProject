@@ -8,7 +8,6 @@ angular.module('examenApp')
             $scope.estado = null;
             ProyectosService.traerPorId($routeParams.id).then(
                 function(rta) {
-                    c(rta.data[0]);
                     $scope.proyecto = rta.data[0];
                 },
                 function(rta) {
@@ -16,7 +15,7 @@ angular.module('examenApp')
                 }
             )
             $scope.grabar = function() {
-                c($routeParams.id);
+
                 if ($routeParams.id) {
                     ProyectosService.editar($routeParams.id, $scope.proyecto)
                         .then(function(rta) {
@@ -29,7 +28,6 @@ angular.module('examenApp')
                 } else {
                     ProyectosService.grabar($scope.proyecto)
                         .then(function(rta) {
-                            console.log(rta);
                             $scope.estado = rta.data.status;
                             $scope.estadoMensaje = rta.data.message;
                         }, function(rta) {
