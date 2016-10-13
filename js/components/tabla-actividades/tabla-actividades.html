@@ -1,0 +1,23 @@
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th ng-repeat="dia in dias">{{ dia.fecha }}</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Act Estimadas</th>
+                <td ng-repeat="act in estimadas">{{ act.actE }}</td>
+
+            </tr>
+            <tr>
+                <th scope="row">Act Finalizadas</th>
+                <td ng-repeat="act in finalizadas">{{ act.actF }}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>

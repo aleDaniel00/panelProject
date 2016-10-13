@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Examen Tecnico - Gestion de Proyectos - Perez</title>
+    <meta charset="utf-8">
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.2.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body ng-app="examenApp">
+    <menu-principal></menu-principal>
+    <div class="container-fluid">
+        <div class="row">
+            <filtros-proyectos></filtros-proyectos>
+            <menu-proyectos class="col-xs-12 col-md-3"></menu-proyectos>
+            <div class="col-xs-12 col-md-7" ng-view>
+            </div>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/controllers.js"></script>
+    <script src="js/components/menu-principal/menu-principal.js"></script>
+    <script src="js/components/menu-proyectos/menu-proyectos.js"></script>
+    <script src="js/components/detalles-proyecto/detalles-proyecto.js"></script>
+    <script src="js/components/form-proyecto/form-proyecto.js"></script>
+    <script src="js/components/tabla-actividades/tabla-actividades.js"></script>
+    <script src="js/components/filtros-proyectos/filtros-proyectos.js"></script>
+    <script src="js/components/atributospor-indice/atributospor-indice.js"></script>
+    <script src="js/services/ProyectosService.js"></script>
+    <script src="js/services/ActividadesService.js"></script>
+
+    <!--  <script src="js/services/AuthService.js"></script>
+    <script src="js/controllers/controllers.js"></script>-->
+</body>
+
+</html>

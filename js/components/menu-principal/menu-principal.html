@@ -1,0 +1,20 @@
+<nav class="navbar navbar-default" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" ng-click="isNavCollapsed = !isNavCollapsed">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+
+    </div>
+    <div class="collapse navbar-collapse" uib-collapse="isNavCollapsed">
+
+        <ul class="nav nav-pills">
+            <li ng-repeat="link in links" role="presentation">
+                <a class="btn" href="#{{link.ruta}}">{{ link.nombre}}</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>

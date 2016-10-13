@@ -1,0 +1,30 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Projects</h3>
+    </div>
+    <div class="panel-body">
+        <div class="row">
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model="searchText">
+                </div>
+            </form>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat=" proyecto in proyectos | filter:searchText" ng-click="traerProyecto(proyecto.ID_PROYECTO)"> <a href="#/proyectos/{{proyecto.ID_PROYECTO}}">{{ proyecto.NOMBRE }}</a>
+
+                <a href="#/proyectos/planificacion/{{proyecto.ID_PROYECTO}}" type="button" class="btn btn-default badge" aria-label="left Align">
+                    <span class="glyphicon glyphicon-signal" aria-hidden="true"></span>
+                </a>
+                <a href="#/proyectos/{{proyecto.ID_PROYECTO}}/editar" type="button" class="btn btn-default badge" aria-label="left Align">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </a>
+            </li>
+        </ul>
+        <div class="btn-group pull-right" role="group" aria-label="...">
+            <a href="#/proyectos/nuevo" type="button" class="btn btn-default" aria-label="Left Align">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+            </a>
+        </div>
+    </div>
+</div>
