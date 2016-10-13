@@ -1,5 +1,5 @@
 angular
-    .module('examenApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap'])
+    .module('examenApp', ['ngRoute', 'ngAnimate', 'ngSanitize', 'ui.bootstrap', 'contenteditable'])
 
 // Configuramos las rutas
 .config([
@@ -7,7 +7,7 @@ angular
     function($routeProvider) {
         $routeProvider
         // Cada when define una ruta en nuestra aplicación.
-            .when('/', {
+            .when('/En-Contruccion', {
                 // Le indicamos el template que queremos usar.
                 templateUrl: 'views/home.html'
             })
@@ -16,6 +16,9 @@ angular
             	'templateUrl': 'views/herramientas.html',
             	'controller': 'listarHerramientasController'
             })*/
+            .when('/lista-proyectos', {
+                templateUrl: 'views/proyectos.html'
+            })
             .when('/proyectos/nuevo', {
                 templateUrl: 'views/editarProyecto.html'
             })
@@ -51,6 +54,6 @@ angular
             })*/
         // Definimos una ruta por defecto, en caso que la que
         // pida el usuario no exista.
-        .otherwise('/');
+        .otherwise('/En-Contruccion');
     }
 ]);

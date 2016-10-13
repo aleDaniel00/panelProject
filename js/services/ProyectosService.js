@@ -15,5 +15,8 @@ angular.module('examenApp')
             this.grabar = function(proyecto) {
                 return $http.post('API/GestionProyecto/grabarProject.php', proyecto);
             };
+            this.trearPorAtributo = function(atributo) {
+                return $http.get('API/GestionProyecto/consultaAtributoProject.php?atributo=', atributo);
+            };
         }
     ]);

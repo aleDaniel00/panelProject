@@ -10,12 +10,20 @@
         <tbody>
             <tr>
                 <th scope="row">Act Estimadas</th>
-                <td ng-repeat="act in estimadas">{{ act.actE }}</td>
+                <td ng-repeat="act in estimadas">
+                    <span contenteditable="true" ng-model="act.actE" strip-br="true" strip-tags="true" select-non-editable="true">
+                        {{ act.actE }}
+                    </span>
+                </td>
 
             </tr>
             <tr>
                 <th scope="row">Act Finalizadas</th>
-                <td ng-repeat="act in finalizadas">{{ act.actF }}</td>
+                <td ng-repeat="act in finalizadas">
+                    <span contenteditable="true" ng-model="act.actF" strip-br="true" strip-tags="true" select-non-editable="true">
+                        {{ act.actF }}
+                    </span>
+                </td>
             </tr>
 
         </tbody>

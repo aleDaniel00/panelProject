@@ -1,4 +1,4 @@
-function MainCtrl($scope, $log) {
+function MainCtrl($scope, $log, ProyectosService) {
 
     this.indices = [{
             atributo: 'NOMBRE'
@@ -17,8 +17,14 @@ function MainCtrl($scope, $log) {
         }
     ];
     $scope.verIndice = function(indice) {
-        alert(indice.atributo);
-        this.index = indice.atributo;
+        ProyectosService.trearPorAtributo(indice).then(
+            function(rta) {
+                $scope.proyectos = rta.data;
+            },
+            function(rta) {
+                c(rta.data);
+            }
+        )
     }
 
 

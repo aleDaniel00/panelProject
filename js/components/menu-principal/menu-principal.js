@@ -7,7 +7,7 @@ component("menuPrincipal", {
         $scope.isCollapsedHorizontal = false;
         $scope.links = [{
             "nombre": "Project",
-            "ruta": "/"
+            "ruta": "/lista-proyectos"
         }, {
             "nombre": "Groups",
             "ruta": "En-Construccion"
