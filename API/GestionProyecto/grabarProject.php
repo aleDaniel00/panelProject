@@ -22,11 +22,11 @@ $exito = mysqli_query($db, $query);
 if($exito) {
     echo json_encode([
         'status' => 1,
-        'message' => 'El proyecto se insertó correctamente! :D'
+        'message' => 'El proyecto se insertó correctamente! :D , actualiza la pagina par ver los cambios'
     ]);
 } else {
     echo json_encode([
         'status' => 0,
-        'message' => 'Hubo un error, no andó nada :('
+        'message' => 'Todos Los campos son obligatorios :('
     ]);
 }

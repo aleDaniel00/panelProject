@@ -2,33 +2,33 @@
 
 <div ng-show="estadoMensaje != null" class="alert" ng-class="{'alert-success': estado == 1, 'alert-danger': estado == 0}">{{ estadoMensaje }}</div>
 
-<form ng-submit="grabar()">
+<form novalidate ng-submit="grabar()">
     <div class="form-group">
         <label class="control-label">Nombre Proyecto</label>
-        <input class="form-control" type="text" ng-model="proyecto.NOMBRE">
+        <input class="form-control" type="text" ng-model="proyecto.NOMBRE" ng-trim="false" ngrequired="" class="ng-pristine ng-valid ng-empty ng-valid-pattern ng-touched">
     </div>
     <div class="form-group">
         <label class="control-label">Descripción</label>
-        <textarea class="form-control" rows="3" ng-model="proyecto.DESCRIPCION"></textarea>
+        <textarea class="form-control" rows="3" ng-model="proyecto.DESCRIPCION" ng-trim="false" ngrequired="" class="ng-pristine ng-valid ng-empty ng-valid-pattern ng-touched"></textarea>
     </div>
     <div class="form-group">
         <label class="control-label">RFI</label>
-        <textarea class="form-control" rows="3" ng-model="proyecto.RFI"></textarea>
+        <textarea class="form-control" rows="3" ng-model="proyecto.RFI" ng-trim="false" ngrequired="" class="ng-pristine ng-valid ng-empty ng-valid-pattern ng-touched">></textarea>
     </div>
     <div class="form-group">
         <label class="control-label">Notas</label>
-        <textarea class="form-control" rows="3" ng-model="proyecto.NOTAS"></textarea>
+        <textarea class="form-control" rows="3" ng-model="proyecto.NOTAS" ng-trim="false" ngrequired="" class="ng-pristine ng-valid ng-empty ng-valid-pattern ng-touched">></textarea>
 
     </div>
     <div class="form-group">
         <label class="control-label">Estado</label>
-        <select class="form-control" ng-model="proyecto.ID_ESTADO">
+        <select class="form-control" ng-model="proyecto.ID_ESTADO" ng-trim="false" ngrequired="" class="ng-pristine ng-valid ng-empty ng-valid-pattern ng-touched">>
             <option value="1">Pendiente</option>
             <option value="2">Aprovado</option>
             <option value="3">Cancelado</option>
        
         </select>
     </div>
-    <button class="btn btn-primary">Grabar</button>
+    <button href="#/lista-proyectos" class="btn btn-primary" type="submit">Grabar</button>
     <a href="#/proyecto" class="btn btn-warning">Cancelar</a>
 </form>
